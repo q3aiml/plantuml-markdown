@@ -148,10 +148,10 @@ class PlantUMLBlockProcessor(markdown.preprocessors.Preprocessor):
         except Exception as exc:
             raise Exception('Failed to run plantuml: %s' % exc)
         else:
-            if p.returncode == 0:
-                return out
-            else:
-                raise RuntimeError('Error in "uml" directive: %s' % err)
+            if p.returncode != 0:
+                # plantuml returns a nice image in case of syntax error so log but still return out
+                print('Error in "uml" directive: %s' % err)
+            return out
 
 
 # For details see https://pythonhosted.org/Markdown/extensions/api.html#extendmarkdown
