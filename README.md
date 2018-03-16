@@ -59,7 +59,7 @@ To use the plugin with [Python-Markdown][] you have two choices:
 * copy the file somewhere in your home. A good choice may be the `user-site` path, for example (`bash` syntax):
 
   ```console
-  $ export INSTALLPATH="`python -m site --user-site`/plantuml-markdown"
+  $ export INSTALLPATH="`python -m site --user-site`/plantuml_markdown"
   $ mkdir -p "$INSTALLPATH"
   $ cp plantuml.py "$INSTALLPATH/mdx_plantuml.py"
   $ export PYTHONPATH="$INSTALLPATH"
